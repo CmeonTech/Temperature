@@ -7,42 +7,54 @@
     <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap-5.3.3-dist/js/bootstrap.min.js">
 </head>
-    <body class="container mt-5 lg-5">
-        <div class="card">
-            <div class="card-header">
-                <h3>Convert to Fahrenheit</h3>
+    <body class="container mt-5 w-50">
+        <div class="card shadow-lg">
+            <div class="card-header bg-primary text-white">
+                <h3 class="text-center">Convert to Fahrenheit</h3>
             </div>
             <div class="card-body">
-                <div class="mb-3">
-                    <p>if the formular to convert to FaH is (°C x  9/5) +32, Calculate to °F</p>
-                    <label for="Celcius" class="form-label">Celcius(°C):</label>
-                    <input type="text" class="form-control" id="Celcius">
+                <div class="mb-3 text-center"></div>
+                    <p>If the formula to convert to Fahrenheit is (°C x 9/5) + 32, calculate to °F:</p>
+                    <label for="Celsius" class="form-label">Celsius (°C):</label>
+                    <input type="text" class="form-control" id="Celsius" placeholder="Enter temperature in Celsius">
                 </div>
-                <button class="btn btn-primary" onclick="CalFah()">calculate to Fahreheit</button>
-                <p id="result" class="mt-3"></p>
+                <button class="btn btn-danger w-100" onclick="CalFah()">Calculate to Fahrenheit</button>
+                <p id="result" class="mt-3 text-center"></p>
             </div>
         </div>
-</body>
+    </body>
 
 <script>
-    let input = document.getElementById('Celcius');
+    let input = document.getElementById('Celsius');
     let output = document.getElementById('result');
     
     
-    function CalFah(Celcius) {
-        let Cel = input.value
-        output.innerHTML= `${(Cel * 1.8)+32}  °F`
+    function CalFah() {
+        let Cel = input.value;
 
-        if (input.value===''){
-            alert('Please enter a number')
-        }
-        else if (isNaN(input.value)){
-          alert ('Value must be a Number')
+        if (Cel === '') {
+            alert('Please enter a number');
+            return;
+        } else if (isNaN(Cel)) {
+            alert('Value must be a Number');
+            return;
         }
 
-        
+        output.innerHTML = `${(Cel * 1.8) + 32} °F`;
     }
+
+//     let cel = input.value 
     
+
+//     function CalFah(cel) {
+//     let fahrenheit = CalFah(cel);
+//     return (cel * 9/5) + 32;
+// }
+
+
+// console.log(`${cel}°C is equal to ${fahrenheit}°F`);
+ 
+
     
      
 
