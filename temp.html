@@ -29,14 +29,6 @@
     let output = document.getElementById('result');
     
     
-    // function CalFah() {
-    //     let Cel = input.value
-
-    //        output.innerHTML = `${(Cel * 1.8)+32}  °F`
-        
-           
-    // }
-
     function CalFah(Celcius) {
         let Cel = input.value
         output.innerHTML= `${(Cel * 1.8)+32}  °F`
@@ -44,10 +36,13 @@
         if (input.value===''){
             alert('Please enter a number')
         }
-       
+        else if (isNaN(input.value)){
+          alert ('Value must be a Number')
+        }
 
         
     }
+    
     
      
 
